@@ -2,6 +2,7 @@
 
 :root{
     --header-height: 3.5rem;
+    --hue-color: 242;
 
     --primary-color: #4a4a4a;
     --primary-color-alt: #575757;
@@ -10,14 +11,21 @@
         rgba(45, 45, 45, 0.95) 34%,
         rgba(45, 45, 45, 0.95)
     );
+    --lin-gradient: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Adjust transparency here */
     --title-color: #4a4a4a;
     --text-color: #555;
     --text-color-alt: #999;
     --bg-color: #fff;
     --bg-color-alt: #e9ecef;
     --border-color: #f1f1f1;
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --skin-color: hsl(324, 92%, 46%);
 
     --poppins-font: "Poppins", sans-serif;
+    --lato-font: "Lato", sans-serif;
+    --merriweather-font: "Merriweather", serif;
+    --playfair-font: "Playfair Display", serif;
 
     --fs-h1: 2.75rem;
     --fs-h2: 2.25rem;
@@ -29,6 +37,36 @@
     --medium: 500;
     --semibold: 600;
     --bold: 700;
+
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1024px) {
+    :root {
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+    }
 }
 
 * {
@@ -142,7 +180,7 @@ textarea, input {
 
 .nav__link{
     color: #fff;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-weight: var(--bold);
     font-family: var(--poppins-font);
     text-transform: uppercase;
@@ -182,14 +220,15 @@ textarea, input {
     opacity: 1;
 }
 
+/* ================ Home Related CSS =======================*/
 
 .home{
-    background: url(../assets/home-bg.jpg);
+    position: relative;
+    background: url(../assets/bgnd/backgnd.jpg) no-repeat center center/cover;
     background-size: cover;
     background-position: 50%;
     padding-top: 5.5rem;
     margin-bottom: 2.5rem;
-    position: relative;
 }
 
 .home::before{
@@ -199,7 +238,8 @@ textarea, input {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--linear-gradient);
+    background: var(--lin-gradient); 
+    z-index: 1;
 }
 
 .home__container{
@@ -222,54 +262,62 @@ textarea, input {
 
 .home__name, .home__work, .home__list, .home__social-link{
     color: #fff;
-    font-family: var(--poppins-font);
+    font-family: var(--playfair-font);
 }
 
 .home__name{
     font-size: var(--fs-h1);
     line-height: 1.14rem;
     margin: 0.9em 0 0.5em;
+    font-style: var(--playfair-font);
 }
 
 .home__work{
+    margin-top: 2rem;
     margin-bottom: 2.5em;
     font-size: large;
-    font-family: var(--poppins-font);
+    font-family: var(--playfair-font);
 
 }
 
 .home__list dt{
     float: left;
     font-weight: var(--bold);
-    opacity: 0.4;
+    opacity: 0.8;
+    font-family: var(--merriweather-font);
+    font-size: medium;
 }
 
 .home__list dd{
-    padding-left: 6.25rem;
+    padding-left: 7rem;
+    font-size: large;
 }
 
 .home__list dd:not(:last-child){
-    margin-bottom: 0.94rem;
+    margin-bottom: 1rem;
 }
 
 .home__socials{
-    margin: 1.25rem 0 2.2rem;
+    margin: 2rem 0 2.5rem;
 }
 
 .home__social-link{
     font-size: 1.7rem;
     line-height: 1.36rem;
     margin-right: 0.25rem;
-    opacity: 0.4;
+    opacity: 0.8;
 }
 
 .home__social-link:hover{
     opacity: 1  ;
 }
 
+/* ================ Hello Related CSS =======================*/
+
 .hello__details{
     margin-bottom: 1.67em;
     text-align: justify;
+    font-family: var(--playfair-font);
 }
 
 .button{
@@ -292,6 +340,7 @@ textarea, input {
     column-gap: 0.3rem;
 }
 
+/* ================ Service Related CSS =======================*/
 
 .services__container{
     grid-template-columns: repeat(2, 1fr);
@@ -357,22 +406,39 @@ textarea, input {
     margin-bottom: 0.8em;
 }
 
+/* ================ Experience Related CSS =======================*/
 
 .resume__container{
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 3.75rem;
+    column-gap: 3rem;
+    grid-auto-rows: minmax(max-content, auto);
+}
+
+.resume__data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 }
 
 .resume__title{
-    color: var(--text-color-alt);
-    letter-spacing: 0.4em;
-    margin-bottom: 2.8em;
+    color: var(--text-color);
+    letter-spacing: 0.1em;
+    margin-bottom: 2.5em;
+    font-size: large;
+    font-family: var(--poppins-font);
 }
 
 .resume__item{
     border-left: 2px solid var(--primary-color);
-    padding-left: 1.6rem;
+    padding-left: 1.5rem;
     position: relative;
+    background-color: var(--bg-color);
 }
 
 .resume__item:not(:last-child){
@@ -393,95 +459,181 @@ textarea, input {
 .resume__subtitle{
     color: var(--primary-color);
     margin-bottom: 0.36em;
+    font-family: var(--playfair-font);
+    font-size: medium;
 }
 
 .resume__date{
-    color: var(--text-color-alt);
+    color: var(--text-color);
     margin-bottom: 0.7em;
 }
 
 .resume__description{
     text-align: justify;
+    font-family: var(--merriweather-font);
+    background-color: var(--bg-color);
 }
 
+/* ================ Project Related CSS =======================*/
 
-.project__categories{
+.work__container{
+    grid-template-columns: repeat(3, 350px);
+    gap: 1.8rem;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.work__filters{
     display: flex;
-    column-gap: 3rem;
-    margin-bottom: 1.875rem;
+    justify-content: center;
+    align-items: center;
+    column-gap: .75rem;
+    margin-bottom: 2rem;
 }
 
-.category__btn{
-    color: var(--text-color-alt);
-    font-weight: var(--bold);
-    font-family: var(--poppins-font);
+.work__item{
+    cursor: pointer;
+    color: var(--title-color);
+    padding: .25rem .75rem;
+    font-weight: var(--medium);
+    border-radius: .5rem;
+}
+
+.work__card{
+    background-color: white;
+    padding: 1.25rem;
+    border-radius: .5rem;
+    /* border: 1px solid black; */
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.portfolio__item-details{
+    display: none;
+}
+
+.work__img{
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+}
+
+.work__title{
+    /* font-size: var(--normal-font-size); */
+    /* font-weight: var(--medium); */
+    margin-bottom: var(--mb-0-5);
+    color: black;
+    
+}
+
+.work__button{
+    color: orange;
+    /* font-size: var(--small-font-size); */
+    display: flex;
+    align-items: center;
+    column-gap: .25rem;
+    cursor: pointer;
+}
+
+.work__button-icon{
+    font-size: 1rem;
+    transition: .3s;
+}
+
+.work__button:hover .work__button-icon{
+    transform: translateX(.25rem);
+}
+
+.active-work{
+    background-color: var(--skin-color);
+    color: var(--title-color);
+}
+
+/* ================ Project Popup Related CSS =======================*/
+
+.portfolio__popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.portfolio__popup.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.portfolio__popup-inner{
+    background-color: var(--box-color);
+    width: 900px;
+    border-radius: .5rem;
+    padding: 2.5rem;
     position: relative;
 }
 
-.category__btn:hover{
-    color: var(--primary-color);
+.portfolio__popup-content{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 3rem;
 }
 
-.category__btn::after{
-    content: '';
+.portfolio__popup-close{
     position: absolute;
-    bottom: 0;
-    right: -0.5rem;
-    width: 7px;
-    height: 2px;
-    background-color: var(--primary-color);
-    opacity: 0;
-    transition: 0.3s;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: orange;
+    cursor: pointer;
 }
 
-.category__btn:hover::after{
-    opacity: 1;
+.portfolio__popup-img{
+    border-radius: .5rem;
 }
 
-.projects__container{
-    row-gap: 2.5rem;
+.portfolio__popup-subtitle{
+    font-size: var(--smaller-font-size);
+    margin-bottom: var(--mb-0-25);
+    color: white;
 }
 
-.project__item{
-    grid-template-columns: 5fr 7fr;
+.details__title{
+    /* font-size: var(--h3-font-size); */
+    font-weight: var(--medium);
+    margin-bottom: var(--mb-1);
+    color: white;
 }
 
-.project__img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project__data{
-    padding: 3rem 3rem 2.5rem 1.875rem;
-    border: 1px solid var(--border-color);
-}
-
-.project__title{
-    margin-bottom: 0.8em;
+.details__description{
+    /* font-size: var(--small-font-size); */
+    margin-bottom: var(--mb-2);
+    color: white;
     text-align: justify;
 }
 
-.project__description{
-    margin-bottom: 2.5em;
-    text-align: justify;
+.details__info li{
+    margin-bottom: var(--mb-0-75);
+    text-transform: capitalize;
+    font-size: var(--small-font-size);
+    color: white;
 }
 
-.project__stack{
-    margin-bottom: 1.25em;
+.details__info li:last-child{
+    margin-bottom: 0;
 }
 
-.tags li{
-    display: inline-block;
-    margin-right: 0.6rem;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 14%);
-    padding: 0.3rem 0.6rem;
-    border-radius: 0.2rem;
+.details__info li span{
+    font-weight: normal;
 }
 
-.project__link{
-    float: right;
-    margin-top: 3.9em;
-    color: var(--primary-color);
-    font-family: var(--poppins-font);
+.details__info li a{
+    /* text-transform: lowercase; */
+    color: orange;
 }
