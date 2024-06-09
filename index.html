@@ -6,6 +6,7 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -18,7 +19,7 @@
                     </li>
 
                     <li>
-                        <a href="#services" class="nav__link">Services</a>
+                        <a href="#services" class="nav__link">Interests</a>
                     </li>
 
                     <li>
@@ -29,9 +30,9 @@
                         <a href="#portfolio" class="nav__link">Projects</a>
                     </li>
 
-                    <li>
+                    <!--li>
                         <a href="#contact" class="nav__link">Contact</a>
-                    </li>
+                    </li-->
                 </ul>
 
                 <!--Close Icon -->
@@ -54,7 +55,7 @@
                 <img src="assets/profile/gokul_photo.jpeg" alt="My Pic" class="home__img">
                 <div class="home__data">
                     <h1 class="home__name">Gokul M K</h1>
-                    <p class="home__work">Robotics, Deep Learning, Software Engineer, Mechatronics Engineer</p>
+                    <p class="home__work">Deep Learning, Reinforcement Learning, Robotics, Software Engineer</p>
                     <dl class="home__list">
                         <dt>AGE:</dt>
                         <dd>20</dt>
@@ -64,10 +65,10 @@
                         <dd>Chennai, Tamil Nadu</dt>
                     </dl>
                     <div class="home__socials">
-                        <a href="https://github.com/" target="_blank" class="home__social-link">
+                        <a href="https://github.com/gokulmk-12" target="_blank" class="home__social-link">
                             <i class="ri-github-fill"></i>
                         </a>
-                        <a href="https://linkedin.com/" target="_blank" class="home__social-link">
+                        <a href="https://www.linkedin.com/in/gokul-m-k-886a93263/" target="_blank" class="home__social-link">
                             <i class="ri-linkedin-box-fill"></i>
                         </a>
                     </div>
@@ -79,86 +80,85 @@
             <h2 class="section__title">Hello,</h2>
 
             <p class="hello__details text-lg">
-                I am currently a third-year student enrolled in the Engineering Design Department and
+                I am currently a fourth-year student enrolled in the Engineering Design Department and
 IDDD in Robotics at IIT Madras. Throughout my academic journey, I have dedicated
 significant time to comprehending fundamental robotic principles, theories, and
-concepts. This includes delving into topics such as Kinematics and Dynamics,
-Reinforcement Learning and AI, Motion Planning, Embedded Systems, and Mechanical
-Design, among others.
+concepts. This includes Reinforcement Learning and AI, Kinematics and Dynamics, Motion Planning, Embedded Systems, 
+and Mechanical Design, among others.
+                Currently I am exploring the areas of Scientific Computing and Parallelism. I am delving deeper
+                into Data Driven Engineering, Physics Informed Machine Learning and Parallelism for Scientific Computing.
             </p>
-            <a href="assets/Gokul_s_CV.pdf" class="button button--flex text-sm">
+            <a href="assets/cv/Gokul_s_CV.pdf" class="button button--flex text-sm">
                 <i class="ri-download-2-fill"></i> DOWNLOAD CV
             </a>
         </section>
 
         <section class="services section container" id="services">
-            <h2 class="section__title">Services</h2>
+            <h2 class="section__title title-center" data-title="Services">
+                Interests
+            </h2>
 
-            <div class="services__container grid">
+            <div class="services__container container grid">
                 <div class="services__item">
-                    <div class="icon__box">
-                        <img src="assets/web-design.png" alt="" class="services__icon"/>
-                        <div class="services__dot">
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-
-                    <h3 class="services__title text-lg">WEB DESIGN</h3>
-                    <p class="services__detail">
-                        Leveraged the Moveit motion planning framework to autonomously control the onboard UR5 manipulator,
-orchestrating the plucking process.
+                    <!-- <i class="fas fa-network-wired"></i> -->
+                    <h3 class="services__title">Deep Learning</h3>
+                    <p class="services__description">
+                        I have been learning neural networks for a year and am proficient with frameworks such as PyTorch and TensorFlow. 
+                        Additionally, I am comfortable with libraries like Google JAX. My notable projects include Geoguide and Exploring Grasping Algorithms.
                     </p>
                 </div>
 
                 <div class="services__item">
-                    <div class="icon__box">
-                        <img src="assets/laptop.png" alt="" class="services__icon"/>
-                        <div class="services__dot">
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-
-                    <h3 class="services__title text-lg">WEB DEVELOPMENT</h3>
-                    <p class="services__detail">
-                        Leveraged the Moveit motion planning framework to autonomously control the onboard UR5 manipulator,
-orchestrating the plucking process.
+                    <h3 class="services__title">Reinforcement Learning</h3>
+                    <p class="services__description">
+                        I had the valuable opportunity to learn cutting-edge concepts in reinforcement learning (RL). I have good experience training RL agents 
+                        for various environments beyond OpenAI Gym. Notable work includes training an agent for bimanual robot catching.
                     </p>
                 </div>
 
                 <div class="services__item">
-                    <div class="icon__box">
-                        <img src="assets/paint-palette.png" alt="" class="services__icon"/>
-                        <div class="services__dot">
-                            <span class="dot"></span>
-                        </div>
-                    </div>
+                    <h3 class="services__title">DL for Scientific Computing</h3>
+                    <p class="services__description">
+                        I was introduced to using deep learning to solve scientific problems, including applying 
+                        Physics-Informed Neural Networks (PINNs) to address scientific differential equations. Notable work 
+                        includes bimanual robot manipulation.
+                    </p>
+                    <span class="service__no">01</span>
+                </div>
 
-                    <h3 class="services__title text-lg">CREATIVE DESIGN</h3>
-                    <p class="services__detail">
-                        Leveraged the Moveit motion planning framework to autonomously control the onboard UR5 manipulator,
-orchestrating the plucking process.
+                <div class="services__item">
+                    <h3 class="services__title">Control Systems</h3>
+                    <p class="services__description">
+                        One of my favorite fields, which I continually explore. Comfortable with Classical Control, State Space, Nonlinear systems, Optimal Control. 
+                        Notable work includes feedback linearization of general nonlinear systems and solving optimal control problems in MATLAB.
                     </p>
                 </div>
 
                 <div class="services__item">
-                    <div class="icon__box">
-                        <img src="assets/smartphone-call.png" alt="" class="services__icon"/>
-                        <div class="services__dot">
-                            <span class="dot"></span>
-                        </div>
-                    </div>
-
-                    <h3 class="services__title text-lg">RESPONSIVE DESIGN</h3>
-                    <p class="services__detail">
-                        Leveraged the Moveit motion planning framework to autonomously control the onboard UR5 manipulator,
-orchestrating the plucking process.
+                    <h3 class="services__title">Embedded Systems</h3>
+                    <p class="services__description">
+                        I am comfortable working with various electronic components, sensors, actuators, microcontrollers, and communication protocols. 
+                        Notable microcontrollers include ESP32, STM32, Arduino, Raspberry Pi Pico, while key protocols 
+                        include I2C, CAN, UART, and SPI.
                     </p>
                 </div>
+
+                <div class="services__item">
+                    <h3 class="services__title">Parallelism</h3>
+                    <p class="services__description">
+                        I'm currently exploring this field with a focus on leveraging parallelism in 
+                        learning-based approaches to expedite applications in robotics, autonomous systems, 
+                        and scientific computing. 
+                    </p>
+                    <span class="service__no">01</span>
+                </div>
+
+
             </div>
         </section>
 
         <section class="section container" id="resume">
-            <h2 class="section__title">Experience</h2>
+            <h2 class="section__title">Education & Experience</h2>
 
             <div class="resume__container grid">
                 <div class="resume__data">
@@ -167,7 +167,7 @@ orchestrating the plucking process.
                     <div class="resume__item">
                         <h3 class="resume__subtitle text-sm">Indian Institute of Technology, Madras</h3>
                         <p class="resume__date text-sm">2021 - PRESENT</p>
-                        <p class="resume__description text-lg">Currently pursuing a Dual Degree, comprising a B.Tech from Engineering Design Department and an Interdisciplinary Dual Degree (IDDD) in Robotics.</p>
+                        <p class="resume__description text-lg">Currently pursuing a Dual Degree, comprising a B.Tech from Engineering Design and an Interdisciplinary Dual Degree in Robotics.</p>
                     </div>
 
                     <div class="resume__item">
